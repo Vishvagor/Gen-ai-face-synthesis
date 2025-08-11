@@ -40,6 +40,12 @@
 <img src="assets/ddpm_fid.png" width="360"/> <img src="assets/dcgan_fid.png" width="360"/>
 -->
 
+## Normalizing Flow (Glow-style) code
+- Code added under `src/nf/`:
+  - `model.py`
+  - `training.py`
+- You can create a small `infer_nf.py` later if you want a NF demo.
+
 ## Reproduce (quick)
 ```bash
 git clone https://github.com/Vishvagor/Gen-ai-face-synthesis
@@ -48,8 +54,4 @@ pip install -r requirements.txt
 # open notebooks in /notebooks or click the Colab badges above
 
 
-## Normalizing Flow (Glow-style) code
-- Code added under `src/nf/`:
-  - `model.py`
-  - `training.py`
-- You can create a small `infer_nf.py` later if you want a NF demo.
+
