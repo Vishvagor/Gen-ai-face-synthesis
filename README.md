@@ -4,7 +4,7 @@
 **Who it's for:** Recruiters/engineers who want to quickly see working generative AI, and learners who want a clean, reproducible baseline.
 
 **Live Demo:** [Huggingface Demo](https://huggingface.co/spaces/Vishvagor/face-synthesis)  
-**Project/Portfolio:** (optional link)
+
 
 ## TL;DR
 - Diffusion + GAN baselines on CelebA.
