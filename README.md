@@ -24,16 +24,16 @@
 
 ## Sample Grids
 **DDPM**
-<img src="assets/ddpm_grid.png" width="420"/>
+<img src="assests/ddpm_grid.png" width="420"/>
 
 **DCGAN**
-<img src="assets/dcgan_grid.png" width="420"/>
+<img src="assests/dcgan_grid.png" width="420"/>
 
 **cGAN**
-<img src="assets/cgan_grid.png" width="420"/>
+<img src="assests/cgan_grid.png" width="420"/>
 
 **Glow**
-<img src="assets/glow_grid.png" width="420"/>
+<img src="assests/glow_grid.png" width="420"/>
 
 <!-- Optional: FID curves if you have them
 ## FID snapshots
