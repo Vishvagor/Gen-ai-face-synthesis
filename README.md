@@ -1,26 +1,27 @@
-# CelebA Generative Baselines — DCGAN, cGAN, DDPM, Glow (64×64)
+# CelebA Generative Baselines — DCGAN, cGAN, DDPM, Glow
 
 [![Open In Colab (DDPM)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/ddpm_celeba.ipynb)
 [![Open In Colab (DCGAN)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/dcgan_celeba.ipynb)
 [![Open In Colab (cGAN)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/cgan_celeba.ipynb)
 [![Open In Colab (Glow)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/glow_celeba.ipynb)
 
-> **No reruns needed.** Each Colab opens with results displayed in the first cell. Training/sampling cells are optional and heavy.
+> **Note:** The Colab opens with results displayed. Heavy training cells are optional.
 
 ## TL;DR
-- Trained **DCGAN, cGAN, DDPM, Glow** on **CelebA 64×64** as practical baselines.
-- Biggest wins: sane init, BatchNorm/activation placement, consistent FID evaluation pipeline.
-- DDPM produced cleaner faces; DCGAN trained faster; Glow required careful stability tricks.
+- Benchmarked **DCGAN, cGAN, Glow, DDPM** on **CelebA** with a shared evaluation pipeline.
+- Best FID: **139.6** (DDPM, epoch **300**).
+- Key levers: sound initialization, BatchNorm/activation placement, standardized FID evaluation.
 
 ### Results (fill your numbers)
-| Model | Best FID | Epoch | Resolution | Approx Train Time |
-|------:|---------:|------:|-----------:|------------------:|
-| DCGAN | **243.5**| **250**| 64×64      |  ~10+ hrs (GPU)   |
-| cGAN  | **500**  | **50**| 64×64      |  ~10+ hrs (GPU)   |
-| DDPM  | **139.6**| **300**| 64×64     | ~10+ hrs (GPU)   |
-| Glow  | **269.3**| **50** | 64×64     | ~10+ hrs (GPU)   |
+| Model | Best FID | Epoch | Approx. Train Time |
+|------:|---------:|------:|-------------------:|
+| DCGAN | 243.5    |  50   | ~10+ hrs (GPU)     |
+| cGAN  | 500.0    |  50   | ~10+ hrs (GPU)     |
+| Glow  | 269.3    |  50   | ~10+ hrs (GPU)     |
+| **DDPM**  | **139.6** | **300** | **~10+ hrs (GPU)** |
 
-> Metric: **FID** on consistent preprocessing. Hardware notes in each notebook.
+> Hardware: single T4 (Colab). FID is comparable across models because the evaluation pipeline is identical.
+
 
 ## Sample Grids
 **DDPM**
