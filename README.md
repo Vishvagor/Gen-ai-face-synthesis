@@ -1,64 +1,52 @@
-# Face Synthesis (Diffusion/GAN) — Demo + Code
+# CelebA Generative Baselines — DCGAN, cGAN, DDPM, Glow (64×64)
 
-**What this is:** A small generative image project exploring Diffusion and GAN baselines on CelebA (64×64), with a minimal web demo.
-**Who it's for:** Recruiters/engineers who want to quickly see working generative AI, and learners who want a clean, reproducible baseline.
+[![Open In Colab (DDPM)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/ddpm_celeba.ipynb)
+[![Open In Colab (DCGAN)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/dcgan_celeba.ipynb)
+[![Open In Colab (cGAN)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/cgan_celeba.ipynb)
+[![Open In Colab (Glow)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vishvagor/Gen-ai-face-synthesis/blob/main/notebooks/glow_celeba.ipynb)
 
-**Live Demo:** [Huggingface Demo](https://huggingface.co/spaces/Vishvagor/face-synthesis)  
-
+> **No reruns needed.** Each Colab opens with results displayed in the first cell. Training/sampling cells are optional and heavy.
 
 ## TL;DR
-- Diffusion + GAN baselines on CelebA.
-- Biggest wins: sane initialization, BN/activation placement, consistent FID evaluation.
-- Results snapshot (replace with your numbers):
+- Trained **DCGAN, cGAN, DDPM, Glow** on **CelebA 64×64** as practical baselines.
+- Biggest wins: sane init, BatchNorm/activation placement, consistent FID evaluation pipeline.
+- DDPM produced cleaner faces; DCGAN trained faster; Glow required careful stability tricks.
 
-| Model | Best FID | Epoch | Resolution | Notes |
-|------:|---------:|------:|-----------:|-------|
-| DDPM  |    105     |   300   |   64×64    | fill later |
-| DCGAN |    139     |   300   |   64×64    | optional |
-| Glow  |    110     |   300   |   64×64    | optional |
+### Results (fill your numbers)
+| Model | Best FID | Epoch | Resolution | Approx Train Time |
+|------:|---------:|------:|-----------:|------------------:|
+| DCGAN | **443.5**| **50**| 64×64      |  ~10+ hrs (GPU)   |
+| cGAN  | **500**  | **50**| 64×64      |  ~10+ hrs (GPU)   |
+| DDPM  | **139.6**| **300**| 64×64     | ~10+ hrs (GPU)   |
+| Glow  | **269.3**| **50** | 64×64     | ~10+ hrs (GPU)   |
 
-> Hardware/time: e.g., 1×T4 GPU, batch 64, ~X hours per Y epochs.
+> Metric: **FID** on consistent preprocessing. Hardware notes in each notebook.
 
----
+## Sample Grids
+**DDPM**
+<img src="assets/ddpm_grid.png" width="420"/>
 
-## Quickstart (local)
+**DCGAN**
+<img src="assets/dcgan_grid.png" width="420"/>
+
+**cGAN**
+<img src="assets/cgan_grid.png" width="420"/>
+
+**Glow**
+<img src="assets/glow_grid.png" width="420"/>
+
+<!-- Optional: FID curves if you have them
+## FID snapshots
+<img src="assets/ddpm_fid.png" width="360"/> <img src="assets/dcgan_fid.png" width="360"/>
+-->
+
+## Reproduce (quick)
 ```bash
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
+git clone https://github.com/Vishvagor/Gen-ai-face-synthesis
+cd Gen-ai-face-synthesis
 pip install -r requirements.txt
-python app/app.py
-```
+# open notebooks in /notebooks or click the Colab badges above
 
-## Project structure
-```
-gen-ai-face-synthesis/
-  README.md
-  requirements.txt
-  app/
-    app.py               # Gradio demo (placeholder now; swap in real sampler next)
-  src/
-    inference.py         # put your real diffusion/GAN inference here
-    utils.py
-  models/
-    download_weights.py  # (optional) fetch trained weights from HF
-  assets/                # screenshots or small sample images
-  tests/
-    test_smoke.py        # sanity test (imports)
-  notebooks/
-    ...                  # your training notebooks (read-only)
-  LICENSE
-  .gitignore
-```
-
-## How to wire your real model
-- Move your **sampling** function from a notebook/script into `src/inference.py` as `run_inference(seed: int) -> PIL.Image`.
-- If you have trained weights, do **not** commit them. Publish to HF Model Hub or add a tiny downloader in `models/download_weights.py`.
-- In `app/app.py`, import `run_inference` and return that image instead of the placeholder.
-
-## Data & license
-- Trained on **CelebA** (link + license).  
-- Code is MIT-licensed.
-
----
 
 ## Normalizing Flow (Glow-style) code
 - Code added under `src/nf/`:
