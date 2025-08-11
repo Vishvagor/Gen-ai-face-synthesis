@@ -1,6 +1,0 @@
-gradio
-numpy
-pillow
-# Add torch/torchvision once you wire real inference:
-# torch
-# torchvision
