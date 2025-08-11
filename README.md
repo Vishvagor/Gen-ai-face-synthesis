@@ -15,7 +15,7 @@
 ### Results (fill your numbers)
 | Model | Best FID | Epoch | Resolution | Approx Train Time |
 |------:|---------:|------:|-----------:|------------------:|
-| DCGAN | **443.5**| **50**| 64×64      |  ~10+ hrs (GPU)   |
+| DCGAN | **243.5**| **250**| 64×64      |  ~10+ hrs (GPU)   |
 | cGAN  | **500**  | **50**| 64×64      |  ~10+ hrs (GPU)   |
 | DDPM  | **139.6**| **300**| 64×64     | ~10+ hrs (GPU)   |
 | Glow  | **269.3**| **50** | 64×64     | ~10+ hrs (GPU)   |
