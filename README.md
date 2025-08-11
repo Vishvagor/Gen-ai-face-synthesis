@@ -3,7 +3,7 @@
 **What this is:** A small generative image project exploring Diffusion and GAN baselines on CelebA (64×64), with a minimal web demo.
 **Who it's for:** Recruiters/engineers who want to quickly see working generative AI, and learners who want a clean, reproducible baseline.
 
-**Live Demo:** (paste your Hugging Face Space link here)  
+**Live Demo:** [(paste your Hugging Face Space link here)](https://huggingface.co/spaces/Vishvagor/face-synthesis)  
 **Project/Portfolio:** (optional link)
 
 ## TL;DR
