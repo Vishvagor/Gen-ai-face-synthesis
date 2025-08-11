@@ -13,9 +13,9 @@
 
 | Model | Best FID | Epoch | Resolution | Notes |
 |------:|---------:|------:|-----------:|-------|
-| DDPM  |    —     |   —   |   64×64    | fill later |
-| DCGAN |    —     |   —   |   64×64    | optional |
-| Glow  |    —     |   —   |   64×64    | optional |
+| DDPM  |    105     |   300   |   64×64    | fill later |
+| DCGAN |    139     |   300   |   64×64    | optional |
+| Glow  |    110     |   300   |   64×64    | optional |
 
 > Hardware/time: e.g., 1×T4 GPU, batch 64, ~X hours per Y epochs.
 
